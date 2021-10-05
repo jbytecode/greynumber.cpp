@@ -185,4 +185,9 @@ GreyNumber<double> sqrt(GreyNumber<T> const &g){
     return GreyNumber<double>(std::sqrt(g.A()), std::sqrt(g.B()));
 }
 
+template <typename T>
+GreyNumber<double> pow(GreyNumber<T> const &g, double power){
+    return GreyNumber<double>(std::pow(g.A(), power), std::pow(g.B(), power));
+}
+
 #endif
