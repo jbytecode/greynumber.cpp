@@ -160,6 +160,15 @@ bool testGreaterOrEqualOperator()
     return true;
 }
 
+bool testSqrt(){
+    GreyNumber<int> g = GreyNumber<int>(100, 64);
+    GreyNumber<double> result = sqrt(g);
+
+    assert(approx(result.A(), 8.0));
+    assert(approx(result.B(), 10.0));
+    return true;
+}
+
 int main(){
     std::cout << "Empyty Constructor: " << testEmptyConstructor() << std::endl;
     std::cout << "Single Constructor: " << testSingleConstructor() << std::endl;
@@ -177,6 +186,7 @@ int main(){
     std::cout << "Greater than: " << testGreaterOperator() << std::endl;
     std::cout << "Less than or equal: " << testLessOrEqualOperator() << std::endl;
     std::cout << "Greater than or equal: " << testGreaterOrEqualOperator() << std::endl;
+    std::cout << "Sqrt: " << testSqrt() << std::endl;
     return 0;
 }
 

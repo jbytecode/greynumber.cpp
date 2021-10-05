@@ -2,6 +2,7 @@
 #define greynumber
 
 #include <algorithm>
+#include <cmath>
 
 template <typename T>
 class GreyNumber
@@ -179,43 +180,9 @@ bool operator>=(GreyNumber<T> const &g1, GreyNumber<T> const &g2)
 }
 
 
-
-/*
 template <typename T>
-GreyNumber<T> operator+(GreyNumber<T> const &g1, GreyNumber<T> const &g2);
-
-template <typename T>
-GreyNumber<T> operator-(GreyNumber<T> const &g1, GreyNumber<T> const &g2);
-
-template <typename T>
-GreyNumber<T> operator-(GreyNumber<T> const &g);
-
-template <typename T>
-GreyNumber<T> operator*(GreyNumber<T> const &g1, GreyNumber<T> const &g2);
-
-template <typename T>
-GreyNumber<T> operator*(T k, GreyNumber<T> const &g);
-
-template <typename T>
-GreyNumber<T> operator*(GreyNumber<T> const &g, T k);
-
-template <typename T>
-GreyNumber<T> operator/(GreyNumber<T> const &g1, GreyNumber<T> const &g2);
-
-template <typename T>
-bool operator==(GreyNumber<T> const &g1, GreyNumber<T> const &g2);
-
-template <typename T>
-bool operator<(GreyNumber<T> const &g1, GreyNumber<T> const &g2);
-
-template <typename T>
-bool operator>(GreyNumber<T> const &g1, GreyNumber<T> const &g2);
-
-template <typename T>
-bool operator<=(GreyNumber<T> const &g1, GreyNumber<T> const &g2);
-
-template <typename T>
-bool operator>=(GreyNumber<T> const &g1, GreyNumber<T> const &g2);
-*/
+GreyNumber<double> sqrt(GreyNumber<T> const &g){
+    return GreyNumber<double>(std::sqrt(g.A()), std::sqrt(g.B()));
+}
 
 #endif
