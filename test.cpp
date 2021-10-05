@@ -31,6 +31,13 @@ bool testFullConstructor()
     return true;
 }
 
+bool testRightOrder(){
+    GreyNumber<int> g1 = GreyNumber<int>(10, 1);
+    assert(g1.A() == 1);
+    assert(g1.B() == 10);
+    return true;
+}
+
 bool testOperatorPlus()
 {
     GreyNumber<int> g1 = GreyNumber<int>(5, 7);
@@ -157,6 +164,7 @@ int main(){
     std::cout << "Empyty Constructor: " << testEmptyConstructor() << std::endl;
     std::cout << "Single Constructor: " << testSingleConstructor() << std::endl;
     std::cout << "Full Constructor: " << testFullConstructor() << std::endl;
+    std::cout << "Test Right Order:" << testRightOrder() << std::endl;
     std::cout << "Operator Plus: " << testOperatorPlus() << std::endl;
     std::cout << "Operator Binary Minus: " << testOperatorBinaryMinus() << std::endl;
     std::cout << "Operator Unary Minus:" << testOperatorUnaryMinus() << std::endl;
