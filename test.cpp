@@ -1,5 +1,6 @@
 #include "./greynumber.hpp"
 #include <iostream>
+#include <sstream>
 #include <assert.h>
 
 
@@ -179,6 +180,15 @@ bool testPower()
     return true;
 }
 
+bool testRepresentation(){
+    GreyNumber<int> g = GreyNumber<int>(10, 20);
+    std::ostringstream os;
+    os << g;
+    std::string s = os.str();
+    assert(s == "GreyNumber(10, 20)");
+    return true;
+}
+
 int main(){
     std::cout << "Empyty Constructor: " << testEmptyConstructor() << std::endl;
     std::cout << "Single Constructor: " << testSingleConstructor() << std::endl;
@@ -198,6 +208,7 @@ int main(){
     std::cout << "Greater than or equal: " << testGreaterOrEqualOperator() << std::endl;
     std::cout << "Sqrt: " << testSqrt() << std::endl;
     std::cout << "Power: " << testPower() << std::endl;
+    std::cout << "Print into stream: " << testRepresentation() << std::endl;
     return 0;
 }
 

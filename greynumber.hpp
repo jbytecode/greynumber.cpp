@@ -3,6 +3,8 @@
 
 #include <algorithm>
 #include <cmath>
+#include <iostream>
+#include <sstream>
 
 template <typename T>
 class GreyNumber
@@ -190,4 +192,10 @@ GreyNumber<double> pow(GreyNumber<T> const &g, double power){
     return GreyNumber<double>(std::pow(g.A(), power), std::pow(g.B(), power));
 }
 
+template <typename T>
+std::ostream &operator<<(std::ostream &outputStream, const GreyNumber<T> &g)
+{
+    outputStream << "GreyNumber(" << g.A() << ", " << g.B() << ")";
+    return outputStream;
+}
 #endif
