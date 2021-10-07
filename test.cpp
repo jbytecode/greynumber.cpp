@@ -1,7 +1,7 @@
 #include "./greynumber.hpp"
 #include <iostream>
 #include <sstream>
-#include <assert.h>
+#include <cassert>
 
 
 template <typename T>

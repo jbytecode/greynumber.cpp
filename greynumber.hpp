@@ -3,6 +3,7 @@
 
 #include <algorithm>
 #include <cmath>
+#include <cassert>
 #include <iostream>
 #include <sstream>
 
