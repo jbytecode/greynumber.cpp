@@ -1,4 +1,4 @@
-CPP=clang++
+CPP=g++
 
 .PHONY: clean test
 
