@@ -9,8 +9,10 @@ clean:
 	rm -f greynumber.o
 	rm -f test.o
 
-test: greynumber.o 
+test.o: test.cpp
 	$(CPP) -c -o test.o test.cpp
+
+test: greynumber.o test.o 
 	$(CPP) -o test test.o greynumber.o
 	./test
 
