@@ -9,20 +9,13 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
 
     steps:
     - uses: actions/checkout@v2
     - name: clang
       run: |
-        sudo apt-get install clang
-        sudo apt-get install libgtest-dev
-        sudo apt-get install googletest
-        sudo apt-get install cmake
-        cd /usr/src/gtest
-        sudo cmake CMakeLists.txt
-        sudo make
-        sudo cp *.a /usr/lib
-        sudo ln -s /usr/lib/libgtest.a /usr/local/lib/gtest/libgtest.a
-        sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/gtest/libgtest_main.a
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        brew install clang
+        brew install googletest
         make test
