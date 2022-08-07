@@ -16,6 +16,6 @@ jobs:
     - name: clang
       run: |
         sudo apt-get install clang
-        sudo apt-get install googletest
+        sudo apt-get install libgtest-dev
     - name: make test
       run: make test
