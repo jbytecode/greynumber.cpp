@@ -16,5 +16,5 @@ jobs:
     - name: gcc
       run: |
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        brew install googletest
+        brew install catch2
         make test

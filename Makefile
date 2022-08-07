@@ -1,7 +1,7 @@
 CPP=g++
-CFLAGS=-std=c++11
-GTESTINC=$(shell pkg-config --cflags gtest)
-GTESTLIB=$(shell pkg-config --libs gtest)
+CFLAGS=-std=c++14
+TESTINC=$(shell pkg-config --cflags catch2)
+TESTLIB=$(shell pkg-config --libs catch2)
 
 .PHONY: clean test
 
@@ -13,11 +13,11 @@ clean:
 	rm -f test.o
 
 test.o: test.cpp
-	$(CPP) -c $(CFLAGS) $(GTESTINC) -o test.o test.cpp
+	$(CPP) -c $(CFLAGS) $(TESTINC) -o test.o test.cpp
 
 test: greynumber.o test.o 
-	$(CPP) $(CFLAGS) $(GTESTINC) $(GTESTLIB) -o test test.o greynumber.o
-	./test
+	$(CPP) $(CFLAGS) $(TESTINC) $(TESTLIB) -o test test.o greynumber.o
+	./test --success
 
 greynumber.o: greynumber.cpp
 	$(CPP) $(CFLAGS) -c -o greynumber.o greynumber.cpp
