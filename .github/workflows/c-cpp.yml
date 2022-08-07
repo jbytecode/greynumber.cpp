@@ -14,6 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: clang
-      run: sudo apt-get install clang
+      run: |
+        sudo apt-get install clang
+        sudo apt-get install googletest
     - name: make test
       run: make test
