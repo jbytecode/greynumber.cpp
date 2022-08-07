@@ -1,7 +1,6 @@
 #include "./greynumber.hpp"
 #include <iostream>
 #include <sstream>
-#include <cassert>
 #include "gtest/gtest.h"
 
 template <typename T>
